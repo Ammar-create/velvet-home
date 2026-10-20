@@ -8,9 +8,9 @@ Built on [CleanYourTV](https://github.com/Gathin23/cleanyourtv) (MIT) and extend
 
 ## Screenshots
 
-| Home, over your own wallpaper | Home, minimal |
+| Home — dock with the springing glass highlight | App grid and the library tile |
 |---|---|
-| ![Home screen with wallpaper](screenshots/home-dynamic.png) | ![Home screen on a dark background](screenshots/home-black.png) |
+| ![Home screen with the dock](screenshots/home-dynamic.png) | ![App grid with the App library tile](screenshots/home-black.png) |
 
 **The pencil menu** — one place for everything:
 
@@ -22,7 +22,7 @@ Built on [CleanYourTV](https://github.com/Gathin23/cleanyourtv) (MIT) and extend
 
 | Wallpaper browser | Image preview |
 |---|---|
-| ![Folder browser showing image thumbnails at their real aspect ratios](screenshots/wallpaper-browser.png) | ![Full-size preview with set and delete actions](screenshots/wallpaper-preview.png) |
+| ![Folder browser showing image thumbnails at their real aspect ratios, 39 apps in the library](screenshots/wallpaper-browser.png) | ![Full-size preview with Set as current wallpaper and Delete image](screenshots/wallpaper-preview.png) |
 
 **Launcher settings** — a translucent glass page that floats over Home:
 
