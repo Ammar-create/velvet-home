@@ -8,27 +8,29 @@ Built on [CleanYourTV](https://github.com/Gathin23/cleanyourtv) (MIT) and extend
 
 ## Screenshots
 
-| Home — dock with the springing glass highlight | App grid and the library tile |
-|---|---|
-| ![Home screen with the dock](screenshots/home-dynamic.png) | ![App grid with the App library tile](screenshots/home-black.png) |
-
-**The pencil menu** — one place for everything:
+**One pencil, every setting.** Wallpaper, layout editing, hidden apps, restoring them, and the launcher's own settings all sit behind a single pencil in the top bar.
 
 ![Pencil menu open under the top bar](screenshots/menu-pencil.png)
 
 | Layout editing | App library |
 |---|---|
-| ![Moving tiles in layout edit mode](screenshots/edit-layout.png) | ![App library with add-to-home toggles](screenshots/app-library.png) |
+| ![Moving and hiding tiles in layout edit mode](screenshots/edit-layout.png) | ![App library with add-to-home toggles, 39 apps](screenshots/app-library.png) |
+
+**Home.** A large clock, a dock, and a glass highlight that springs to whatever you focus. Hide the dock and it becomes a plain, quiet grid.
+
+| Home with the dock | App grid and the library tile |
+|---|---|
+| ![Home screen with the dock](screenshots/home-dynamic.png) | ![App grid with the App library tile](screenshots/home-black.png) |
+
+**Wallpaper.** Browse folders, see thumbnails at their real shape, then set or delete a picture without leaving the launcher.
 
 | Wallpaper browser | Image preview |
 |---|---|
-| ![Folder browser showing image thumbnails at their real aspect ratios, 39 apps in the library](screenshots/wallpaper-browser.png) | ![Full-size preview with Set as current wallpaper and Delete image](screenshots/wallpaper-preview.png) |
+| ![Folder browser showing image thumbnails at their real aspect ratios](screenshots/wallpaper-browser.png) | ![Full-size preview with Set as current wallpaper and Delete image](screenshots/wallpaper-preview.png) |
 
-**Launcher settings** — a translucent glass page that floats over Home:
+**Settings.** A translucent page that floats over Home, with a glass slider for the column count.
 
 ![Launcher settings](screenshots/settings.png)
-
----
 
 ## Features
 
