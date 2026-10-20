@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TvHome" parent="android:Theme.Material.NoActionBar.Fullscreen">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:colorBackground">@android:color/black</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!-- Launcher settings floats over Home: a transparent window, so the wallpaper still moves
+         behind the glass cards. The page paints its own scrim (@drawable/settings_page_scrim). -->
+    <style name="Theme.TvHome.Settings" parent="Theme.TvHome">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Frosted pill, tvOS style. -->
+    <style name="TopButtonBase">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/pill_bg</item>
+        <item name="android:textColor">@drawable/pill_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/outfit_medium</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:drawablePadding">9dp</item>
+        <item name="android:drawableTint">@drawable/pill_text</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="TopButton" parent="TopButtonBase" />
+
+    <!-- Icon-only pill: a 42dp circle (pill_bg's 21dp corners) with the 22dp icon centred by even padding. Give it a
+         contentDescription, since there is no text. -->
+    <style name="TopButtonIcon" parent="TopButtonBase">
+        <item name="android:layout_width">42dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:drawablePadding">0dp</item>
+    </style>
+
+    <!-- Rows: bare on the card glass, with the focus pill painted underneath the text. -->
+    <style name="SettingsRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">54dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">22dp</item>
+        <item name="android:paddingEnd">22dp</item>
+        <item name="android:background">@drawable/settings_row_glass</item>
+        <item name="android:textColor">@color/settings_row_text</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@font/outfit_medium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="SettingsHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">28dp</item>
+        <item name="android:layout_marginTop">22dp</item>
+        <item name="android:layout_marginBottom">7dp</item>
+        <item name="android:textColor">#7AFFFFFF</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:fontFamily">@font/outfit_medium</item>
+    </style>
+
+    <!-- All four cards share this and nothing else, so their corners are identical by construction:
+         one 20dp radius on @drawable/glass_card, clipped to that outline, the same vertical padding
+         on every card, and rows whose focus pill is inset far enough that it can never poke out of
+         the rounded corner. -->
+    <style name="SettingsCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginEnd">12dp</item>
+        <item name="android:background">@drawable/glass_card</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:clipChildren">true</item>
+        <item name="android:clipToOutline">true</item>
+        <item name="android:outlineProvider">background</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- A hero shortcut: the circular glass button with its caption underneath. -->
+    <style name="SettingsShortcut">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!-- Caption under a circular shortcut. Ten sp, tracked out, muted: it labels without shouting. -->
+    <style name="SettingsIconCaption">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:maxWidth">82dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">#99FFFFFF</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:fontFamily">@font/outfit_medium</item>
+    </style>
+
+    <style name="SettingsDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginStart">22dp</item>
+        <item name="android:layout_marginEnd">22dp</item>
+        <item name="android:background">#14FFFFFF</item>
+    </style>
+
+    <!-- Hero: kicker, title, one muted line. -->
+    <style name="SettingsHeroKicker">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#66FFFFFF</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.22</item>
+        <item name="android:fontFamily">@font/outfit_medium</item>
+    </style>
+
+    <style name="SettingsHeroTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">31sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:fontFamily">@font/outfit_medium</item>
+    </style>
+
+    <style name="SettingsHeroSub">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:textColor">#94FFFFFF</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/outfit</item>
+    </style>
+
+    <!-- Circular glass shortcut in the hero. Icons tint dark on the focused white disc. -->
+    <style name="SettingsIconButton">
+        <item name="android:layout_width">52dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:background">@drawable/glass_circle</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:tint">@drawable/pill_text</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!-- Card heading line: "Columns" on the left, the live count on the right. -->
+    <style name="SettingsCardTitle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/outfit_medium</item>
+    </style>
+
+    <style name="SettingsCardValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#8AFFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/outfit</item>
+    </style>
+
+    <style name="SettingsCardHint">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#70FFFFFF</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/outfit</item>
+    </style>
+
+    <!-- Advanced-effects dialog. Our own window, so it gets our own glass: a floating, translucent
+         window with a transparent background; the panel inside is @drawable/glass_panel. -->
+    <style name="Theme.TvHome.Dialog" parent="android:Theme.Material.Dialog.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.62</item>
+    </style>
+
+    <!-- Dialog action: the same chip the column picker used to use, so focus reads the same. -->
+    <style name="SettingsDialogButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:paddingStart">26dp</item>
+        <item name="android:paddingEnd">26dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/settings_choice_bg</item>
+        <item name="android:textColor">@color/settings_row_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/outfit_medium</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+</resources>
